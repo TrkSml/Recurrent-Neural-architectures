@@ -1,3 +1,5 @@
+#__author__=Tarek Samaali
+
 import numpy as np
 from Optimizers import SGD
 from ActivationLoss import lossCE, sigmoid, tanh_func, softmax
@@ -7,6 +9,7 @@ def array(x):
 
 def to_categorical(x, n_col=None):
     """ One-hot encoding of nominal values """
+    """ Written by Erik Linder-Norén"""
     if not n_col:
         n_col = np.amax(x) + 1
     one_hot = np.zeros((x.shape[0], n_col))

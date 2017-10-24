@@ -261,31 +261,5 @@ if __name__ == '__main__':
 	main()
 
 
-# # Back Propagation Through Time
-#             # Update gradient w.r.t V at time step t
-#     #gradient_hidden_to_output += array(lossgradients[i-1])*(s[i])
-#     # Calculate the gradient w.r.t the state input
-#     grad_wrt_state = array(lossgradients[i-1]).dot(from_hidden_state_to_output) * Softmax.prime(s[i-1])
-#     # Gradient w.r.t the layer input
-#     #acc_grad_next[:, t] = grad_wrt_state.dot(self.U)
-#     # Update gradient w.r.t W and U by backprop. from time step t for at most
-#     # self.bptt_trunc number of time steps
-#     for t_ in reversed(np.arange(i)):
-#         #gradient_input_to_hidden += grad_wrt_state.dot(x[t_])
-#         gradient_hidden_to_hidden += grad_wrt_state.T.dot(s[t_-1])
-#         # Calculate gradient w.r.t previous state
-#         grad_wrt_state = grad_wrt_state.dot(gradient_hidden_to_hidden) * Softmax.prime(s[t_-1])
-
-
-
-
-
-
-
-
-
-
-
-
 
 

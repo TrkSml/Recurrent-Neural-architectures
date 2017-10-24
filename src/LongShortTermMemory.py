@@ -1,3 +1,5 @@
+# __author__ = Tarek Samaali 
+
 import numpy as np
 from Optimizers import SGD
 from ActivationLoss import lossCE, sigmoid, tanh_func, softmax

@@ -86,13 +86,9 @@ class LSTM:
 
 		Wz=self.Wz
 
-		crawler=0
-
 		# Beginning of the forward propagation for a certain number of epochs
 
 		for crawler in range(self.epochs):
-
-			crawler+=1
 
 			f=np.zeros((batch_size, timesteps, size_of_hidden_layers))
 			i=np.zeros((batch_size, timesteps, size_of_hidden_layers))

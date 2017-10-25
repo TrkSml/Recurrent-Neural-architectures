@@ -10,7 +10,7 @@ def array(x):
 
 def to_categorical(x, n_col=None):
     """ One-hot encoding of nominal values """
-    """ Written by Erik Linder-Norén"""
+    """ Written by Erik Linder-Noren"""
     if not n_col:
         n_col = np.amax(x) + 1
     one_hot = np.zeros((x.shape[0], n_col))
@@ -20,7 +20,7 @@ def to_categorical(x, n_col=None):
 
 def gen_mult_ser(nums,timesteps):
         """ Method which generates multiplication series """
-        """ Written by Erik Linder-Norén """
+        """ Written by Erik Linder-Noren """
         X = np.zeros([nums, timesteps, 61], dtype=float)
         y = np.zeros([nums, timesteps, 61], dtype=float)
         for i in range(nums):

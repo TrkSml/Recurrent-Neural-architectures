@@ -19,7 +19,7 @@ def to_categorical(x, n_col=None):
 
 def gen_mult_ser(nums,timesteps):
         """ Method which generates multiplication series """
-        """ Written by Erik Linder-Norén"""
+        """ Written by Erik Linder-Noren"""
         X = np.zeros([nums, timesteps, 61], dtype=float)
         y = np.zeros([nums, timesteps, 61], dtype=float)
         for i in range(nums):
@@ -33,7 +33,7 @@ def gen_mult_ser(nums,timesteps):
 def train_test_split(X, y, split_size=0.3):
     # Split the training data from test data in the ratio specified in
     # test_size
-    """Written by Erik Linder-Norén """
+    """Written by Erik Linder-Noren """
     length=int(len(X)*split_size)
     X_train, X_test = X[:length], X[length:]
     y_train, y_test = y[:length], y[length:]
@@ -67,9 +67,8 @@ class RNN:
 
 		# Beginning of the forward propagation for a certain number of epochs
 
-		i=0
+
 		for i in range(self.epochs):
-			i+=1
 			s=np.zeros((batch_size, timesteps, size_of_hidden_layers))
 			vst=np.zeros((batch_size, timesteps+1, size_of_hidden_layers))
 			o=np.zeros((batch_size, timesteps, input_dim))

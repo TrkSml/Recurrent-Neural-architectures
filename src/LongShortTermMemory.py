@@ -164,24 +164,24 @@ class LSTM:
 				for ti in reversed(np.arange(max(0, t - self.truncation), t+1)):
 
 					do[:,ti]=tanh(c[:,ti])*dh[:,ti]
-		        	dc[:,ti]=tanh.prime(c[:,ti])*o[:,ti]*dh[:,ti]
-		        	df[:,ti]=c[:,ti-1]*dc[:,ti]
-		        	dc[:,ti-1]+=f[:,ti-1]*dc[:,ti]
-		        	di[:,ti]=g[:,ti]*dc[:,ti]
-		        	dg[:,ti]=di[:,ti]*dc[:,ti]
+					dc[:,ti]=tanh.prime(c[:,ti])*o[:,ti]*dh[:,ti]
+					df[:,ti]=c[:,ti-1]*dc[:,ti]
+					dc[:,ti-1]+=f[:,ti-1]*dc[:,ti]
+					di[:,ti]=g[:,ti]*dc[:,ti]
+					dg[:,ti]=di[:,ti]*dc[:,ti]
 
-		        	#gradient_Wz+=h[:,ti].T.dot(lossgradients[:,ti])
-		        	gradient_Wz+=h[:,ti].T.dot(loss[:,ti])
+					#gradient_Wz+=h[:,ti].T.dot(lossgradients[:,ti])
+					gradient_Wz+=h[:,ti].T.dot(loss[:,ti])
 
-		        	gradient_Uo+=(tanh.prime(o[:,ti])*do[:,ti]).T.dot(X[:,ti])
-		        	gradient_Ui+=(softmax.prime(i[:,ti])*di[:,ti]).T.dot(X[:,ti])
-		        	gradient_Uf+=(softmax.prime(f[:,ti])*df[:,ti]).T.dot(X[:,ti])
-		        	gradient_Uc+=(softmax.prime(g[:,ti])*dg[:,ti]).T.dot(X[:,ti])
+					gradient_Uo+=(tanh.prime(o[:,ti])*do[:,ti]).T.dot(X[:,ti])
+					gradient_Ui+=(softmax.prime(i[:,ti])*di[:,ti]).T.dot(X[:,ti])
+					gradient_Uf+=(softmax.prime(f[:,ti])*df[:,ti]).T.dot(X[:,ti])
+					gradient_Uc+=(softmax.prime(g[:,ti])*dg[:,ti]).T.dot(X[:,ti])
 
-		        	gradient_Wo+=(tanh.prime(o[:,ti])*do[:,ti]).T.dot(h[:,ti+1])
-		        	gradient_Wi+=(softmax.prime(i[:,ti])*di[:,ti]).T.dot(h[:,ti+1])
-		        	gradient_Wf+=(softmax.prime(f[:,ti])*df[:,ti]).T.dot(h[:,ti+1])
-		        	gradient_Wc+=(softmax.prime(g[:,ti])*dg[:,ti]).T.dot(h[:,ti+1])
+					gradient_Wo+=(tanh.prime(o[:,ti])*do[:,ti]).T.dot(h[:,ti+1])
+					gradient_Wi+=(softmax.prime(i[:,ti])*di[:,ti]).T.dot(h[:,ti+1])
+					gradient_Wf+=(softmax.prime(f[:,ti])*df[:,ti]).T.dot(h[:,ti+1])
+					gradient_Wc+=(softmax.prime(g[:,ti])*dg[:,ti]).T.dot(h[:,ti+1])
 			
 
 			# Updating our Weight matrices
